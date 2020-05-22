@@ -1,15 +1,13 @@
 /* eslint-disable no-template-curly-in-string */
-import { CustomAbstract } from '../nodes'
+/*import { CustomAbstract } from '../nodes'
 import ArticleInformationSectionComponent from './ArticleInformationSectionComponent'
 import ArticleMetadataComponent from './ArticleMetadataComponent'
-import AbstractsSectionComponent from './AbstractsSectionComponent'
+import AbstractsSectionComponent from './AbstractsSectionComponent'*/
 import {
-  AddAffiliationCommand, AddAuthorCommand, AddCustomAbstractCommand, RemoveEntityCommand,
-  MoveEntityUpCommand, MoveEntityDownCommand, AddEditorCommand,
-  AddGroupCommand, AddFunderCommand, AddKeywordCommand,
-  AddSubjectCommand
+  RemoveEntityCommand, MoveEntityUpCommand, MoveEntityDownCommand,
+  /*AddAffiliationCommand, AddAuthorCommand, AddCustomAbstractCommand, AddEditorCommand, AddGroupCommand, AddFunderCommand, AddKeywordCommand,  AddSubjectCommand*/
 } from './MetadataEntityCommands'
-import CustomAbstractComponent from './CustomAbstractComponent'
+/*import CustomAbstractComponent from './CustomAbstractComponent'*/
 
 export default {
   name: 'metadata',
@@ -47,14 +45,14 @@ export default {
             type: 'group',
             label: 'entities',
             items: [
-              { type: 'command', name: 'add-author', label: 'author' },
+             /* { type: 'command', name: 'add-author', label: 'author' },
               { type: 'command', name: 'add-custom-abstract', label: 'custom-abstract' },
               { type: 'command', name: 'add-editor', label: 'editor' },
               { type: 'command', name: 'add-group', label: 'group' },
               { type: 'command', name: 'add-affiliation', label: 'affiliation' },
               { type: 'command', name: 'add-funder', label: 'funder' },
               { type: 'command', name: 'add-keyword', label: 'keyword' },
-              { type: 'command', name: 'add-subject', label: 'subject' }
+              { type: 'command', name: 'add-subject', label: 'subject' }*/
             ]
           },
           {
@@ -107,7 +105,7 @@ export default {
       }
     ])
 
-    config.addComponent('article-metadata', ArticleMetadataComponent)
+  /*  config.addComponent('article-metadata', ArticleMetadataComponent)
     config.addComponent('article-information', ArticleInformationSectionComponent)
     config.addComponent(CustomAbstract.type, CustomAbstractComponent)
     config.addComponent('@abstracts', AbstractsSectionComponent)
@@ -120,7 +118,7 @@ export default {
     config.addCommand('add-funder', AddFunderCommand)
     config.addCommand('add-keyword', AddKeywordCommand)
     config.addCommand('add-subject', AddSubjectCommand)
-
+*/
     config.addCommand('remove-entity', RemoveEntityCommand, {
       commandGroup: 'collection'
     })
@@ -131,14 +129,14 @@ export default {
       commandGroup: 'collection'
     })
 
-    config.addLabel('abstracts', 'Abstracts')
+  /*  config.addLabel('abstracts', 'Abstracts')
     config.addLabel('article-information', 'Article Information')
     config.addLabel('article-metadata', 'Article Metadata')
     config.addLabel('entities', 'Entities')
     config.addLabel('groups', 'Groups')
     config.addLabel('issueTitle', 'Issue Title')
     config.addLabel('keywords', 'Keywords')
-    config.addLabel('affiliations', 'Affiliations')
+    config.addLabel('affiliations', 'Affiliations')*/
     config.addLabel('references', 'References')
     // TODO: provide a means to override the label via commandState,
     // i.e. the command itself stores the desired lable in commandState.label
@@ -148,7 +146,7 @@ export default {
     config.addLabel('remove-something', 'Remove ${something}')
     config.addLabel('move-something-down', 'Move ${something} down')
     config.addLabel('move-something-up', 'Move ${something} up')
-    config.addLabel('subjects', 'Subjects')
+    /*config.addLabel('subjects', 'Subjects')*/
 
     config.addIcon('checked-item', { 'fontawesome': 'fa-check-square-o' })
     config.addIcon('unchecked-item', { 'fontawesome': 'fa-square-o' })

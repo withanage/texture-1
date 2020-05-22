@@ -9,7 +9,7 @@ export default class MetadataModel {
   constructor (api) {
     this._api = api
     this._sections = [
-      { name: 'article-information', model: new ArticleInformationSectionModel(api) },
+   /*   { name: 'article-information', model: new ArticleInformationSectionModel(api) },
       { name: 'abstracts', model: new AbstractsSectionModel(api) },
       { name: 'authors', model: createValueModel(api, ['metadata', 'authors']) },
       { name: 'editors', model: createValueModel(api, ['metadata', 'editors']) },
@@ -17,7 +17,7 @@ export default class MetadataModel {
       { name: 'affiliations', model: createValueModel(api, ['metadata', 'affiliations']) },
       { name: 'funders', model: createValueModel(api, ['metadata', 'funders']) },
       { name: 'keywords', model: createValueModel(api, ['metadata', 'keywords']) },
-      { name: 'subjects', model: createValueModel(api, ['metadata', 'subjects']) },
+      { name: 'subjects', model: createValueModel(api, ['metadata', 'subjects']) },*/
       // TODO: references are not really metadata. This should be edited in the Manuscript directly
       // for the time being we leave it as it is
       { name: 'references', model: createValueModel(api, ['article', 'references']) }

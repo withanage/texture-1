@@ -13,7 +13,7 @@ export default class ManuscriptTOC extends Component {
       .ref('tocEntries')
       .on('click', domHelpers.stop)
 
-    tocEntries.append(
+  /*  tocEntries.append(
       $$(SectionTOCEntry, {
         label: this.getLabel('title'),
         section: 'title'
@@ -25,7 +25,7 @@ export default class ManuscriptTOC extends Component {
         label: this.getLabel('abstract'),
         section: 'abstract'
       })
-    )
+    )*/
 
     tocEntries.append(
       $$(BodyTOCEntry, {

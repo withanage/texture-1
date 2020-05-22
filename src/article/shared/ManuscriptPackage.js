@@ -72,14 +72,14 @@ export default {
     config.addComponent('add-supplementary-file', AddSupplementaryFileWorkflow)
     config.addComponent('toc', ManuscriptTOC)
 
-    config.addCommand('add-author', AddAuthorCommand)
+    //config.addCommand('add-author', AddAuthorCommand)
     config.addCommand('add-figure-panel', AddFigurePanelCommand, {
       commandGroup: 'figure-panel'
     })
     config.addCommand('add-metadata-field', AddFigureMetadataFieldCommand, {
       commandGroup: 'metadata-fields'
     })
-    config.addCommand('add-affiliation', AddAffiliationCommand)
+    //config.addCommand('add-affiliation', AddAffiliationCommand)
     config.addCommand('add-reference', AddReferenceCommand)
 
     config.addCommand('create-external-link', InsertExtLinkCommand, {
@@ -281,17 +281,17 @@ export default {
     })
 
     // Workflows
-    config.addComponent('add-affiliation-workflow', AddAffiliationWorkflow)
-    config.addComponent('add-author-workflow', AddAuthorWorkflow)
+    //config.addComponent('add-affiliation-workflow', AddAffiliationWorkflow)
+    //config.addComponent('add-author-workflow', AddAuthorWorkflow)
     config.addComponent('add-reference-workflow', AddReferenceWorkflow)
     config.addComponent('edit-metadata-workflow', EditMetadataWorkflow)
 
     // Labels
-    config.addLabel('add-author', 'Add Author')
+   // config.addLabel('add-author', 'Add Author')
     config.addLabel('add-ref', 'Add Reference')
-    config.addLabel('article-info', 'Article Information')
-    config.addLabel('article-record', 'Article Record')
-    config.addLabel('contributors', 'Authors & Contributors')
+    //config.addLabel('article-info', 'Article Information')
+    //config.addLabel('article-record', 'Article Record')
+    //config.addLabel('contributors', 'Authors & Contributors')
     config.addLabel('create-unordered-list', 'Bulleted list')
     config.addLabel('create-ordered-list', 'Numbered list')
     config.addLabel('edit-metadata', 'Edit Metadata')
@@ -442,12 +442,12 @@ export default {
 
     // Register commands and keyboard shortcuts for collections
     // registerCollectionCommand(config, 'author', ['metadata', 'authors'], { keyboardShortcut: 'CommandOrControl+Alt+A', nodeType: 'person' })
-    registerCollectionCommand(config, 'funder', ['metadata', 'funders'], { keyboardShortcut: 'CommandOrControl+Alt+Y' })
-    registerCollectionCommand(config, 'editor', ['metadata', 'editors'], { keyboardShortcut: 'CommandOrControl+Alt+E', nodeType: 'person' })
-    registerCollectionCommand(config, 'group', ['metadata', 'groups'], { keyboardShortcut: 'CommandOrControl+Alt+G' })
-    registerCollectionCommand(config, 'keyword', ['metadata', 'keywords'], { keyboardShortcut: 'CommandOrControl+Alt+K' })
-    registerCollectionCommand(config, 'affiliation', ['metadata', 'affiliations'], { keyboardShortcut: 'CommandOrControl+Alt+O' })
-    registerCollectionCommand(config, 'subject', ['metadata', 'subjects'])
+    //registerCollectionCommand(config, 'funder', ['metadata', 'funders'], { keyboardShortcut: 'CommandOrControl+Alt+Y' })
+    //registerCollectionCommand(config, 'editor', ['metadata', 'editors'], { keyboardShortcut: 'CommandOrControl+Alt+E', nodeType: 'person' })
+    //registerCollectionCommand(config, 'group', ['metadata', 'groups'], { keyboardShortcut: 'CommandOrControl+Alt+G' })
+    //registerCollectionCommand(config, 'keyword', ['metadata', 'keywords'], { keyboardShortcut: 'CommandOrControl+Alt+K' })
+    //registerCollectionCommand(config, 'affiliation', ['metadata', 'affiliations'], { keyboardShortcut: 'CommandOrControl+Alt+O' })
+    //registerCollectionCommand(config, 'subject', ['metadata', 'subjects'])
   },
   ManuscriptEditor,
   // legacy

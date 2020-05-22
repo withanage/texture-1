@@ -12,7 +12,7 @@ export default class ManuscriptComponent extends Component {
 
     // TODO: maybe we want to be able to configure if a section should be hidden when empty
 
-    // Title
+    /*// Title
     let titleModel = manuscript.getTitle()
     el.append(
       $$(ManuscriptSection, {
@@ -66,7 +66,7 @@ export default class ManuscriptComponent extends Component {
           placeholder: this.getLabel('abstract-placeholder')
         }).addClass('sm-abstract')
       )
-    )
+    )*/
     // Body
     let bodyModel = manuscript.getBody()
     el.append(
