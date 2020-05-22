@@ -32,7 +32,7 @@ export default class ArticleLoader {
       if (!validationResult.ok) {
         let err = new Error('Validation failed.')
         err.detail = validationResult.errors
-        throw err
+        //TODO wit throw err
       }
     }
 
@@ -50,7 +50,7 @@ export default class ArticleLoader {
         if (!validationResult.ok) {
           let err = new Error('Validation failed.')
           err.detail = validationResult.errors
-          throw err
+          //TODO wit throw err
         }
       }
     }
