@@ -18,9 +18,17 @@ export default class ElementCitationConverter {
     const doc = importer.state.doc
     let elementCitation = el.find('element-citation')
     if (!elementCitation) {
-      throw new Error('<element-citation> is required')
+      let mixedCitation = el.find('mixed-citation')
+        _importMixedCitation(elementCitation, node, doc, importer)
+      if (!mixedCitation) {
+       throw new Error('<element-citation> or <mixed-citation> is required')
+      }
     }
-    _importElementCitation(elementCitation, node, doc, importer)
+    else {
+      _importElementCitation(elementCitation, node, doc, importer)
+    }
+
+
   }
 
   export (node, el, exporter) {
@@ -30,6 +38,13 @@ export default class ElementCitationConverter {
     )
     return el
   }
+}
+
+function _importMixedCitation (el, node, doc, importer) {
+
+  node.type = JATS_BIBR_TYPES_TO_INTERNAL["article"]
+    Object.assign(node, {
+  })
 }
 
 function _importElementCitation (el, node, doc, importer) {

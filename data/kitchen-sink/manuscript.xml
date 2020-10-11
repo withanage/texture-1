@@ -724,6 +724,19 @@ def read() = in.read()
           <source>pyhector</source>
         </element-citation>
       </ref>
+      <ref>
+        <mixed-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name><surname>Hart</surname> <given-names>JT</given-names>
+            </name></person-group>.
+          <source>A new kind of doctor: the general practitioner
+            part in the health of the community</source>.
+          <publisher-loc>London</publisher-loc>:
+          <publisher-name>Merlin Press</publisher-name>,
+          <date iso-8601-date="1988" date-type="published">
+            <year>1988</year></date>.
+        </mixed-citation>
+      </ref>
     </ref-list>
   </back>
 </article>
