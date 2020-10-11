@@ -9,7 +9,7 @@
 
 .sc-pinned-message > .se-msg-wrap {
   display: flex;
-  max-width: 600px;
+  max-width: 1200px;
   margin: 7px auto;
   color: #000;
   text-align: center;

@@ -29,9 +29,9 @@ export default class Texture extends Component {
     el.append(
       $$(ResourceComponent, props).ref('resource')
     )
-    if (platform.inBrowser && !platform.isChromium && !platform.inElectron) {
+    if (platform.inBrowser && !platform.isChromium && !platform.inElectron && !platform.isFF) {
       el.append(
-        $$(PinnedMessage, { icon: 'fa-warning', label: 'Attention! Current version of Texture supports only Chrome browser.' })
+        $$(PinnedMessage, { icon: 'fa-warning', label: 'This editor may may not work fully in your browser. If you experience problems, please try loading the editor in Firefox or Chrome.' })
       )
     }
     return el
