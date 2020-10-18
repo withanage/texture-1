@@ -1,5 +1,5 @@
-import { DefaultDOMElement } from 'substance'
-import { PersistedDocumentArchive } from './dar'
+import {DefaultDOMElement} from 'substance'
+import {PersistedDocumentArchive} from './dar'
 
 export default class TextureArchive extends PersistedDocumentArchive {
   /*
@@ -53,12 +53,16 @@ export default class TextureArchive extends PersistedDocumentArchive {
     }
   }
 
-  _loadDocument (type, record, documents) {
-    let loader = this._config.getDocumentLoader(type)
-    if (loader) {
-      return loader.load(record.data, this._config)
-    } else {
-      throw new Error('Unsupported document type')
+  _loadDocument(type, record, documents) {
+    let config = this._config;
+    if (config) {
+      let loader = config.getDocumentLoader(type)
+      if (loader) {
+        return loader.load(record.data, config)
+      } else {
+        // throw new Error('Unsupported document type')
+        console.info('Unsupported document type')
+      }
     }
   }
 
@@ -67,7 +71,8 @@ export default class TextureArchive extends PersistedDocumentArchive {
     if (serializer) {
       return serializer.export(document, this._config)
     } else {
-      throw new Error('Unsupported document type')
+      // throw new Error('Unsupported document type')
+      console.info('Unsupported document type')
     }
   }
 
