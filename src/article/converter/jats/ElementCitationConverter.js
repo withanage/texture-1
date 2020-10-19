@@ -43,19 +43,20 @@ export default class ElementCitationConverter {
 function _importMixedCitation (el, node, doc, importer) {
   const type = el.attr('publication-type')
   node.type = JATS_BIBR_TYPES_TO_INTERNAL[type]
-
-
-  Object.assign(node, {
-
-  })
-
-  node.title = "asdsdsadsa"
+  //_setCitationObjects(node, el);
+  node.title = el.getOuterHTML().toString();
 }
 
-function _importElementCitation (el, node, doc, importer) {
-  const type = el.attr('publication-type')
-  node.type = JATS_BIBR_TYPES_TO_INTERNAL[type]
+function _getSeparatedText (rootEl) {
+  let el = rootEl.getChildren();
+  if (el) {
+    return el.map(m => { return m.textContent }).join(' ')
+  } else {
+    return ''
+  }
+}
 
+function _setCitationObjects(node, el) {
   Object.assign(node, {
     assignee: getText(el, 'collab[collab-type=assignee] > named-content'),
     confName: getText(el, 'conf-name'),
@@ -88,6 +89,12 @@ function _importElementCitation (el, node, doc, importer) {
     doi: getText(el, 'pub-id[pub-id-type=doi]'),
     pmid: getText(el, 'pub-id[pub-id-type=pmid]')
   })
+}
+
+function _importElementCitation (el, node, doc, importer) {
+  const type = el.attr('publication-type')
+  node.type = JATS_BIBR_TYPES_TO_INTERNAL[type]
+  _setCitationObjects(node, el);
 
   if (type === 'book' || type === 'report' || type === 'software') {
     node.title = getAnnotatedText(importer, el, 'source', [node.id, 'title'])
