@@ -44,7 +44,7 @@ function _importMixedCitation (el, node, doc, importer) {
   const type = el.attr('publication-type')
   node.type = JATS_BIBR_TYPES_TO_INTERNAL[type]
   //_setCitationObjects(node, el);
-  node.title = el.getInnerHTML().toString();
+  node.title = el.getOuterHTML().toString();
 }
 
 function _getSeparatedText (rootEl) {

@@ -1,5 +1,5 @@
-import { prettyPrintXML, platform } from 'substance'
-import { DEFAULT_JATS_SCHEMA_ID } from './ArticleConstants'
+import {platform, prettyPrintXML} from 'substance'
+import {DEFAULT_JATS_SCHEMA_ID} from './ArticleConstants'
 
 export default class ArticleSerializer {
   export (doc, config) {
@@ -26,10 +26,21 @@ export default class ArticleSerializer {
     }
 
     let xmlStr = prettyPrintXML(jats)
+    xmlStr = String(xmlStr)
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/<element-citation(\s)publication-type="(.)*">(\s)*<(.)*>(\s)*<mixed-citation\s/g, '<mixed-citation ')
+        .replace(/<element-citation>(\s)*<(.)*>(\s)*<mixed-citation/g, '<mixed-citation')
+        .replace(/<\/mixed-citation><\/(.)*>(\s)+<\/element-citation>/g, '<\mixed-citation>')
+
     // for the purpose of debugging
     if (platform.inBrowser) {
       console.info('saving jats', { el: jats.getNativeElement(), xml: xmlStr })
     }
+
+
 
     return xmlStr
   }
