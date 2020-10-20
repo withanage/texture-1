@@ -12,3 +12,4 @@ package-lock.json
 /tmp
 /coverage
 /.nyc_output
+.idea/*
