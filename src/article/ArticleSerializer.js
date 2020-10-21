@@ -33,7 +33,7 @@ export default class ArticleSerializer {
         .replace(/&quot;/g, '"')
         .replace(/<element-citation(\s)publication-type="(.)*">(\s)*<(.)*>(\s)*<mixed-citation\s/g, '<mixed-citation ')
         .replace(/<element-citation>(\s)*<(.)*>(\s)*<mixed-citation/g, '<mixed-citation')
-        .replace(/<\/mixed-citation><\/(.)*>(\s)+<\/element-citation>/g, '<\mixed-citation>')
+        .replace(/<\/mixed-citation><\/(.)*>(\s)+<\/element-citation>/g, '<\/mixed-citation>')
 
     // for the purpose of debugging
     if (platform.inBrowser) {
