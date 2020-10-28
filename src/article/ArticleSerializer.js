@@ -27,10 +27,9 @@ export default class ArticleSerializer {
 
     let xmlStr = prettyPrintXML(jats)
     xmlStr = String(xmlStr)
-        .replace(/&amp;/g, '&')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&quot;/g, '"')
+         .replace(/&lt;mixed-citation/g, '<mixed-citation')
+         .replace(/&lt;\/mixed-citation&gt;/g, '<\/mixed-citation>')
+         .replace(/publication-type="journal"&gt;/g, 'publication-type="journal">')
         .replace(/<element-citation(\s)publication-type="(.)*">(\s)*<(.)*>(\s)*<mixed-citation\s/g, '<mixed-citation ')
         .replace(/<element-citation>(\s)*<(.)*>(\s)*<mixed-citation/g, '<mixed-citation')
         .replace(/<\/mixed-citation><\/(.)*>(\s)+<\/element-citation>/g, '<\/mixed-citation>')
